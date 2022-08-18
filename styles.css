@@ -1,39 +1,85 @@
-:root {
-    --grid-cols: 1;
-    --grid-rows: 1;
-  }
-  
-  #container {
-    display: grid;
-    grid-gap: 1em;
-    grid-template-rows: repeat(var(--grid-rows), 1fr);
-    grid-template-columns: repeat(var(--grid-cols), 1fr);
-  }
-  
-  .grid-item {
-    padding: 1em;
-    border: 1px solid #ddd;
-    text-align: center;
-    border-radius: 50px;
-  
-  }
-  
-  body {
-    background: white;
-    display: flex;
-    justify-content: center;
-  }
+.flex-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(rgba(96, 79, 252, 0.082), white);
+}
+.board {
+  width: 900px;
+  height: 900px;
+  display: grid;
+  background-color: black;
+  box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(255, 255, 255),
+    0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+    grid-gap: 5px;
+}
+.target {
+  padding: 1em;
+  border: 1px solid #ddd;
+  text-align: center;
+  border-radius: 100px;   
+}
 
-  .content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-width: 800px;
-    min-height: 810px;
-    width: 60vw;
-    height: 60vw;
-    max-width: 800px;
-    max-height: 810px;
+.board:hover {
+  cursor: pointer;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 1000px;
+  min-height: 1000px;
+  width: 60vw;
+  height: 60vw;
+  max-width: 800px;
+  max-height: 810px;
 
-    background: black;
-  }
+}
+.title {
+  display: flex;
+  justify-content: center;
+}
+.buttons {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+button {
+  padding: 0.3em 1.2em;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 2em;
+  text-decoration: none;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.2s;
+}
+button:hover {
+  cursor: pointer;
+}
+.blackButton {
+  background-color: black;
+  color: white;
+}
+.blackButton:hover {
+  background-color: white;
+  color: black;
+}
+.grayButton {
+  background-color: rgba(128, 128, 128, 0.411);
+  color: black;
+}
+.grayButton:hover {
+  background-color: rgb(95, 95, 95);
+  color: white;
+}
+input {
+  width: 50px;
+}
+
+.mode {
+  margin-bottom: 5px;
+}
+.error {
+  display: none;
+}
